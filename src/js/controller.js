@@ -62,10 +62,9 @@ const controlSearchResult = async function () {
   }
 };
 const controlAddBookamark = function () {
-  //console.log(model.state.recipe);
   if (!model.state.recipe.bookmarked) model.addbookmark(model.state.recipe);
   else model.deleteBookmark(model.state.recipe.id);
-  //console.log(model.state.recipe);
+
   recipeview.update(model.state.recipe);
   BookMarksView.render(model.state.bookmarks);
   console.log(model.state.bookmarks);
@@ -76,11 +75,10 @@ const controlBookmarks = function () {
 const controlPagination = function (pageGoTo) {
   resultView.render(model.getsearchResultPage(pageGoTo));
   paginationView.render(model.state.search);
-  //console.log('pagination control');
 };
 const controlServing = function (newservings) {
   model.updateServing(newservings);
-  //console.log(model.state.recipe);
+
   recipeview.update(model.state.recipe);
 };
 const controlAddrecipe = async function (newRecipe) {
@@ -103,9 +101,7 @@ const controlAddrecipe = async function (newRecipe) {
     AddRecipeView.renderError(err.message);
   }
 };
-const newfeature = function () {
-  console.log('welcome to application');
-};
+
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
 
@@ -117,7 +113,6 @@ const init = function () {
   recipeview.addhandlerAddBookmark(controlAddBookamark);
   paginationView.addHandlerClick(controlPagination);
   AddRecipeView.addHandlerUpload(controlAddrecipe);
-  newfeature();
 };
 
 init();
