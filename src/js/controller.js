@@ -4,13 +4,13 @@ import { modal_CLOSE_WINDOW } from './config.js';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import searchview from './views/searchview.js';
-import resultView from './views/resultView.js';
+//import resultView from './views/resultView.js';
 import resultView from './views/resultView.js';
 import paginationView from './views/paginationView.js';
-import BookMarksView from './views/bookmarksView.js';
 import bookmarksView from './views/bookmarksView.js';
-import AddRecipeView from './views/addRecipeView.js';
+//import bookmarksView from './views/bookmarksView.js';
 import addRecipeView from './views/addRecipeView.js';
+//import addRecipeView from './views/addRecipeView.js';
 
 // if (module.hot) {
 //   module.hot.accept();
@@ -66,7 +66,7 @@ const controlAddBookamark = function () {
   else model.deleteBookmark(model.state.recipe.id);
 
   recipeview.update(model.state.recipe);
-  BookMarksView.render(model.state.bookmarks);
+  bookmarksView.render(model.state.bookmarks);
   console.log(model.state.bookmarks);
 };
 const controlBookmarks = function () {
@@ -112,7 +112,7 @@ const init = function () {
 
   recipeview.addhandlerAddBookmark(controlAddBookamark);
   paginationView.addHandlerClick(controlPagination);
-  AddRecipeView.addHandlerUpload(controlAddrecipe);
+  addRecipeView.addHandlerUpload(controlAddrecipe);
 };
 
 init();

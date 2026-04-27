@@ -105,7 +105,7 @@ init();
 const clearbookMarks = function () {
   localStorage.clear('bookmarks');
 };
-clearbookMarks();
+//clearbookMarks();
 export const uploadRecipe = async function (newRecipe) {
   console.log(Object.entries(newRecipe));
   try {

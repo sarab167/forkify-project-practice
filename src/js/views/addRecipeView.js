@@ -1,6 +1,6 @@
 import icons from 'url:../../img/icons.svg';
 import view from './view.js';
-class AddRecipeView extends view {
+class addRecipeView extends view {
   _parentElement = document.querySelector('.upload');
   _message = 'recipe successfully loaded';
 
@@ -27,6 +27,7 @@ class AddRecipeView extends view {
   }
   addHandlerUpload(handler) {
     this._parentElement.addEventListener('submit', function (e) {
+      console.log('welcome');
       const dataarr = [...new FormData(this)];
       const data = Object.fromEntries(dataarr);
       console.log(data);
@@ -36,4 +37,4 @@ class AddRecipeView extends view {
 
   //_generateMarkup() {}
 }
-export default new AddRecipeView();
+export default new addRecipeView();
